@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>WAGORA – Dog Care, Health, AI Help &amp; Community</title>
+  <meta name="description" content="WAGORA is a calm, beautiful home for everything about your dog: daily care, health records, an AI that knows your dog, lost-dog safety tools and a kind community.">
+  <meta name="theme-color" content="#FFF9F3" id="themeColor">
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('wagora-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}d.setAttribute('data-theme',t);d.classList.add('js')})()</script>
+  <link rel="canonical" href="https://wagora.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WAGORA">
+  <meta property="og:title" content="WAGORA – A smarter life for your best friend">
+  <meta property="og:description" content="Daily care, health records, AI help, lost-dog safety and a kind community. In one calm app.">
+  <meta property="og:url" content="https://wagora.vercel.app/">
+  <meta property="og:image" content="https://wagora.vercel.app/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WAGORA – A smarter life for your best friend">
+  <meta name="twitter:description" content="Daily care, health records, AI help, lost-dog safety and a kind community.">
+  <meta name="twitter:image" content="https://wagora.vercel.app/assets/img/og.png">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css?v=1">
+  <link rel="preload" as="image" href="/assets/img/screen-home.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "WAGORA: Dog Care & Community",
+    "operatingSystem": "Android",
+    "applicationCategory": "LifestyleApplication",
+    "description": "Daily dog care, health records, an AI assistant, lost-dog safety tools and a kind community in one app.",
+    "url": "https://wagora.vercel.app/",
+    "image": "https://wagora.vercel.app/assets/img/icon-512.png",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "inLanguage": ["en", "es", "de"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="5.5" cy="11" r="1.9"/><circle cx="9.5" cy="6.5" r="1.9"/><circle cx="14.5" cy="6.5" r="1.9"/><circle cx="18.5" cy="11" r="1.9"/><path d="M12 12.5c-3 0-5.5 2.8-5.5 5 0 1.7 1.3 2.5 2.8 2.5 1 0 1.7-.5 2.7-.5s1.7.5 2.7.5c1.5 0 2.8-.8 2.8-2.5 0-2.2-2.5-5-5.5-5Z"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.5-9.2-9.2C1.6 8 3.7 4.8 7 4.8c2 0 3.400 1 5 3 1.600-2 3-3 5-3 3.300 0 5.400 3.200 4.200 6.500C19.500 16 12 20.500 12 20.500Z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.500 4.500 5.500v5.600c0 4.600 3.200 8.600 7.500 10 4.300-1.400 7.500-5.400 7.500-10V5.500L12 2.500Z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500 10 17.500 19 7"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 1.900 5.800L20 10l-5 3.900L16.200 20 12 16.600 7.800 20 9 13.900 4 10l6.100-1.200L12 3Z"/></symbol>
+      <symbol id="i-pill" viewBox="0 0 24 24"><g transform="rotate(-40 12 12)"><rect x="2.500" y="8" width="19" height="8" rx="4"/><path d="M12 8v8"/></g></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11Z"/></symbol>
+      <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18c0 4.500-3.800 8-9 8s-9-3.500-9-8Z"/><path d="M8 7c.7-1 .7-2 0-3M12 7c.7-1 .7-2 0-3M16 7c.7-1 .7-2 0-3"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.500" y="5" width="17" height="15.500" rx="3"/><path d="M8 3v4M16 3v4M3.500 10h17"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></symbol>
+      <symbol id="i-scan" viewBox="0 0 24 24"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M4 12h16"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.500h16V16H9.500L5 20v-4H4z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.500-6-6.500-11a6.500 6.500 0 0 1 13 0c0 5-6.500 11-6.500 11Z"/><circle cx="12" cy="10" r="2.500"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.500 2h-15zM10 20.500a2 2 0 0 0 4 0"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.500"/><path d="M2.500 20c0-3.500 3-5.500 6.500-5.500s6.500 2 6.500 5.500"/><circle cx="17.500" cy="9" r="2.500"/><path d="M17 14.500c2.500 0 4.500 1.500 4.500 4.500"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.500" width="14" height="10" rx="2.500"/><path d="M8 10.500v-3a4 4 0 0 1 8 0v3"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.500"/><path d="M2.500 12h19M12 2.500c3 3 3 16 0 19M12 2.500c-3 3-3 16 0 19"/></symbol>
+      <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="7" height="7" rx="1.500"/><rect x="13.500" y="3.500" width="7" height="7" rx="1.500"/><rect x="3.500" y="13.500" width="7" height="7" rx="1.500"/><path d="M14 14h3v3M20.500 14v6.500h-4M14 20.500h.01"/></symbol>
+      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.500-2.500h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.500"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20h16M7 20v-7M12 20V5M17 20v-10"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.500"/><path d="m20 20-4-4"/></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.500"/><circle cx="18" cy="6" r="2.500"/><path d="M8.500 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.500"/></symbol>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 7.500A2.500 2.500 0 0 1 6.500 5H18v3"/><rect x="3.500" y="8" width="17" height="12" rx="3"/><circle cx="16.500" cy="14" r="1.200"/></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.500"/><circle cx="18" cy="6" r="2.500"/><circle cx="18" cy="18" r="2.500"/><path d="m8.200 10.800 7.600-3.600M8.200 13.200l7.600 3.600"/></symbol>
+      <symbol id="i-siren" viewBox="0 0 24 24"><path d="M6 18v-5a6 6 0 0 1 12 0v5M4 18h16v3H4zM12 3v2M4.500 6 6 7.500M19.500 6 18 7.500"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="m2.500 9 9.500-4.500L21.500 9 12 13.500z"/><path d="M6.500 11.500V16c0 1.200 2.500 2.500 5.500 2.500s5.500-1.300 5.500-2.500v-4.500M21.500 9v6"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.500 2"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.500" y="2.500" width="11" height="19" rx="3"/><path d="M10.500 18.500h3"/></symbol>
+      <symbol id="i-widget" viewBox="0 0 24 24"><rect x="3.500" y="3.500" width="7.500" height="7.500" rx="2"/><rect x="13" y="3.500" width="7.500" height="7.500" rx="2"/><rect x="3.500" y="13" width="7.500" height="7.500" rx="2"/><rect x="13" y="13" width="7.500" height="7.500" rx="2"/></symbol>
+      <symbol id="i-lifebuoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.500"/><circle cx="12" cy="12" r="3.800"/><path d="m5.200 5.200 3.800 3.800m6 6 3.800 3.800m0-13.600L15 9m-6 6-3.800 3.800"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.500 14.500A8.500 8.500 0 0 1 9.500 3.500a8.500 8.500 0 1 0 11 11Z"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.200"/><path d="M12 2v2.200M12 19.800V22M4.900 4.900l1.600 1.600M17.500 17.500l1.600 1.600M2 12h2.200M19.800 12H22M4.900 19.100l1.600-1.600M17.500 6.500l1.600-1.600"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M3.600 1.800 13.800 12 3.600 22.200c-.4-.2-.6-.6-.6-1.100V2.900c0-.5.200-.9.600-1.100Z" fill="#34A853" stroke="none"/><path d="m17.200 8.600-3.400 3.400L3.600 1.800c.1-.1.300-.1.400-.1.300 0 .500.100.800.200l12.400 6.700Z" fill="#FBBC04" stroke="none"/><path d="M17.200 15.400 4.800 22.100c-.3.100-.5.200-.8.200-.1 0-.3 0-.4-.1L13.800 12l3.400 3.400Z" fill="#EA4335" stroke="none"/><path d="m20.600 13.200-3.400 2.200-3.400-3.400 3.400-3.400 3.400 2.200c.8.500.8 1.900 0 2.400Z" fill="#4285F4" stroke="none"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="WAGORA home">
+        <img src="/assets/img/logo.webp" alt="" width="40" height="40">
+        <span>WAGORA</span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#ai">Ask WAGORA</a>
+        <a href="#safety">Safety</a>
+        <a href="#community">Community</a>
+        <a href="#plus">Plus</a>
+        <a href="/support">Support</a>
+        <a class="btn btn--sm btn--primary nav__cta" href="#download">Get the app</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <svg class="ic i-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="ic i-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero__mesh" aria-hidden="true"></div>
+      <div class="blob blob--blue" aria-hidden="true"></div>
+      <div class="blob blob--lav" aria-hidden="true"></div>
+      <div class="blob blob--peach" aria-hidden="true"></div>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal"><svg class="ic" aria-hidden="true"><use href="#i-paw"/></svg> Dog care · Health · AI · Community</p>
+          <h1 class="reveal">A smarter life for <span class="accent">your best friend.</span></h1>
+          <p class="lead reveal">WAGORA is a calm, beautiful home for everything about your dog. Daily care, health records, an AI that knows your dog, lost-dog safety tools and a kind community, all in one app.</p>
+          <div class="cta-row reveal">
+            <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.wagora.app" rel="noopener">
+              <svg class="ic ic--brand" aria-hidden="true"><use href="#i-play"/></svg>
+              <span><small>Get it on</small>Google Play</span>
+            </a>
+            <a class="btn btn--ghost" href="#features">See what's inside <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <ul class="trust reveal" aria-label="Highlights">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Never sold. No ads.</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-siren"/></svg>Safety tools always free</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>English, Español, Deutsch</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="ring ring--1"></div>
+          <div class="ring ring--2"></div>
+          <svg class="paw-float paw-float--1" viewBox="0 0 24 24"><use href="#i-paw"/></svg>
+          <svg class="paw-float paw-float--2" viewBox="0 0 24 24"><use href="#i-paw"/></svg>
+          <svg class="paw-float paw-float--3" viewBox="0 0 24 24"><use href="#i-paw"/></svg>
+          <div class="phone phone--hero" data-tilt style="--h:640px">
+            <img src="/assets/img/screen-home.webp" alt="" width="640" height="1448" fetchpriority="high">
+          </div>
+          <div class="chip chip--a float">
+            <span class="chip__icon chip__icon--mint"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <span><strong>Care score 87%</strong><small>Food, meds, walk, water</small></span>
+          </div>
+          <div class="chip chip--b float float--slow">
+            <span class="chip__icon chip__icon--coral"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg></span>
+            <span><strong>Rabies vaccination</strong><small>Reminder in 12 days</small></span>
+          </div>
+          <div class="bubble float float--late">
+            <span class="bubble__who"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg> Ask WAGORA</span>
+            Max has been a little more active this week. Lovely to see!
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Daily care</span><span>Vaccinations</span><span>Medication reminders</span><span>Ask WAGORA</span><span>Food scanner</span><span>Lost-dog alerts</span><span>QR ID tag</span><span>Safety map</span><span>GPS walks</span><span>Training plans</span><span>Vet reports</span><span>Caregiver sharing</span><span>Community</span>
+        <span>Daily care</span><span>Vaccinations</span><span>Medication reminders</span><span>Ask WAGORA</span><span>Food scanner</span><span>Lost-dog alerts</span><span>QR ID tag</span><span>Safety map</span><span>GPS walks</span><span>Training plans</span><span>Vet reports</span><span>Caregiver sharing</span><span>Community</span>
+      </div>
+    </div>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section class="section steps" id="how">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">How it works</p>
+          <h2>Three small steps to a <span class="accent">happier dog.</span></h2>
+          <p>No complicated set-up. WAGORA gets more helpful every time you open it.</p>
+        </div>
+        <ol class="steps__list">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <span class="step__icon"><svg class="ic" aria-hidden="true"><use href="#i-paw"/></svg></span>
+            <h3>Meet your dog</h3>
+            <p>Add a name, breed, birthday and a photo. Allergies and conditions are optional, and they make every answer smarter.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <span class="step__icon"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <h3>Log in a tap</h3>
+            <p>Food, water, walks, medication, weight and mood. See today's care at a glance and keep your streak going.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <span class="step__icon"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span>
+            <h3>Get gentle guidance</h3>
+            <p>Reminders at the right time, patterns you would have missed, and an AI that answers with your dog in mind.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= FEATURE EXPLORER ================= -->
+    <section class="section explorer" id="features">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Everything in one calm place</p>
+          <h2>Built around the <span class="accent">whole dog.</span></h2>
+          <p>Tap through the tour. Every screen is designed to be quick on a busy day and easy on the eyes.</p>
+        </div>
+
+        <div class="ex reveal" id="ex">
+          <div class="ex__tabs" role="tablist" aria-label="Feature tour">
+            <button class="ex__tab" role="tab" aria-selected="true" data-ex="0" data-tone="blue">
+              <span class="ex__ico"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>
+              <span class="ex__txt"><strong>Daily care</strong><small>Today at a glance</small></span>
+              <i class="ex__bar" aria-hidden="true"></i>
+            </button>
+            <button class="ex__tab" role="tab" aria-selected="false" data-ex="1" data-tone="mint">
+              <span class="ex__ico"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span>
+              <span class="ex__txt"><strong>Health records</strong><small>Vaccines, meds, vet visits</small></span>
+              <i class="ex__bar" aria-hidden="true"></i>
+            </button>
+            <button class="ex__tab" role="tab" aria-selected="false" data-ex="2" data-tone="lav">
+              <span class="ex__ico"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span>
+              <span class="ex__txt"><strong>Wellness trends</strong><small>Weight, activity, sleep, mood</small></span>
+              <i class="ex__bar" aria-hidden="true"></i>
+            </button>
+            <button class="ex__tab" role="tab" aria-selected="false" data-ex="3" data-tone="peach">
+              <span class="ex__ico"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span>
+              <span class="ex__txt"><strong>Document vault</strong><small>Scan once, find forever</small></span>
+              <i class="ex__bar" aria-hidden="true"></i>
+            </button>
+            <button class="ex__tab" role="tab" aria-selected="false" data-ex="4" data-tone="blue">
+              <span class="ex__ico"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span>
+              <span class="ex__txt"><strong>Training</strong><small>Programs and calm plans</small></span>
+              <i class="ex__bar" aria-hidden="true"></i>
+            </button>
+            <button class="ex__tab" role="tab" aria-selected="false" data-ex="5" data-tone="lav">
+              <span class="ex__ico"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span>
+              <span class="ex__txt"><strong>Patterns</strong><small>Understand behaviour</small></span>
+              <i class="ex__bar" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="ex__stage" data-tone="blue" id="exStage">
+            <div class="ex__glow" aria-hidden="true"></div>
+            <div class="ex__phones">
+              <div class="phone ex__phone is-on" data-ex-phone="0" style="--h:600px"><img src="/assets/img/screen-home.webp" alt="WAGORA home screen showing Max, a care score of 87 percent and today's care" width="640" height="1448" loading="lazy"></div>
+              <div class="phone ex__phone" data-ex-phone="1" style="--h:600px"><img src="/assets/img/screen-health.webp" alt="Health screen with wellness tiles, preventive care and medical records" width="640" height="1318" loading="lazy"></div>
+              <div class="phone ex__phone" data-ex-phone="2" style="--h:600px"><img src="/assets/img/screen-wellness.webp" alt="Wellness screen with weight, activity, sleep and mood trends" width="640" height="1320" loading="lazy"></div>
+              <div class="phone ex__phone" data-ex-phone="3" style="--h:600px"><img src="/assets/img/screen-docs.webp" alt="Document vault with folders and recent documents" width="640" height="1320" loading="lazy"></div>
+              <div class="phone ex__phone" data-ex-phone="4" style="--h:600px"><img src="/assets/img/screen-training.webp" alt="Training programs with a 12 day streak" width="510" height="1410" loading="lazy"></div>
+              <div class="phone ex__phone" data-ex-phone="5" style="--h:600px"><img src="/assets/img/screen-patterns.webp" alt="Patterns screen with mood, activity, sleep and behaviour events" width="510" height="1410" loading="lazy"></div>
+            </div>
+            <div class="ex__copy" aria-live="polite">
+              <h3 id="exTitle">Today's care, at a glance.</h3>
+              <p id="exBody">Food, medication, walk and water in one row. Tap to log, watch the care score climb and keep a gentle streak going.</p>
+              <ul class="checks" id="exList">
+                <li>Care score and streaks that celebrate small wins</li>
+                <li>Reminders that work even when you're offline</li>
+                <li>Switch between dogs in one tap</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BENTO ================= -->
+    <section class="section bento-sec" id="more">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">And so much more</p>
+          <h2>Small details that make <span class="accent">every day easier.</span></h2>
+        </div>
+
+        <div class="bento">
+          <!-- interactive today's care -->
+          <article class="card card--care reveal" id="careCard">
+            <span class="tag">Try it</span>
+            <h3>Tap through today's care</h3>
+            <p>This is how fast logging feels. Go on, tick them off.</p>
+            <div class="care">
+              <div class="care__ring" aria-hidden="true">
+                <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" class="care__track"/><circle cx="50" cy="50" r="42" class="care__arc" id="careArc" pathLength="100" stroke-dasharray="0 100"/></svg>
+                <span><strong id="carePct">0%</strong><small>Care score</small></span>
+              </div>
+              <div class="care__items" role="group" aria-label="Today's care">
+                <button type="button" class="care__item" aria-pressed="false" data-care><span class="care__ico care__ico--blue"><svg class="ic" aria-hidden="true"><use href="#i-bowl"/></svg></span><strong>Food</strong><small>Tap to log</small></button>
+                <button type="button" class="care__item" aria-pressed="false" data-care><span class="care__ico care__ico--lav"><svg class="ic" aria-hidden="true"><use href="#i-pill"/></svg></span><strong>Medication</strong><small>Tap to log</small></button>
+                <button type="button" class="care__item" aria-pressed="false" data-care><span class="care__ico care__ico--mint"><svg class="ic" aria-hidden="true"><use href="#i-paw"/></svg></span><strong>Walk</strong><small>Tap to log</small></button>
+                <button type="button" class="care__item" aria-pressed="false" data-care><span class="care__ico care__ico--peach"><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg></span><strong>Water</strong><small>Tap to log</small></button>
+              </div>
+            </div>
+            <p class="care__msg" id="careMsg" aria-live="polite">A calm start. Log your first one.</p>
+          </article>
+
+          <article class="card card--wellness reveal">
+            <span class="tag">Wellness</span>
+            <h3>Weight, activity, sleep and mood</h3>
+            <p>Gentle charts that show what's normal for your dog, and what's changing.</p>
+            <div class="well">
+              <figure><img src="/assets/img/card-weight.webp" alt="Weight" width="800" height="450" loading="lazy"><figcaption>28.4 kg · stable</figcaption></figure>
+              <figure><img src="/assets/img/card-activity.webp" alt="Activity" width="800" height="450" loading="lazy"><figcaption>78 min · avg daily</figcaption></figure>
+              <figure><img src="/assets/img/card-sleep.webp" alt="Sleep" width="800" height="450" loading="lazy"><figcaption>8 h 12 m · nightly</figcaption></figure>
+              <figure><img src="/assets/img/card-mood.webp" alt="Mood" width="800" height="450" loading="lazy"><figcaption>Happy · balanced</figcaption></figure>
+            </div>
+            <p class="fineprint">Example data shown.</p>
+          </article>
+
+          <article class="card card--walk reveal">
+            <span class="tag">Walks</span>
+            <h3>GPS walk tracker</h3>
+            <p>Track your route, distance and time, check the walking weather, and earn badges for streaks and challenges.</p>
+            <div class="walk" aria-hidden="true">
+              <svg viewBox="0 0 320 170" class="walk__map" preserveAspectRatio="xMidYMid slice">
+                <rect width="320" height="170" class="walk__bg"/>
+                <path d="M-10 120c60-20 90 30 150 10s80-70 190-40v90H-10z" class="walk__park"/>
+                <path d="M200 -10c-20 50 30 70 10 120" class="walk__river"/>
+                <path d="M24 138c34-6 40-52 78-58s42 34 80 24 34-58 70-66 44 6 52 10" class="walk__route" pathLength="100"/>
+                <circle cx="24" cy="138" r="7" class="walk__start"/>
+                <g class="walk__pin"><path d="M298 48c0-9 6-14 12-14s12 5 12 14-12 22-12 22-12-13-12-22Z" transform="translate(-24 -2)"/><circle cx="298" cy="46" r="4.500" fill="#fff"/></g>
+              </svg>
+              <div class="walk__stats"><span><strong>2.4 km</strong>distance</span><span><strong>38 min</strong>time</span><span><strong>5 days</strong>streak</span></div>
+            </div>
+          </article>
+
+          <article class="card card--tall card--lav reveal">
+            <span class="tag">Medication</span>
+            <h3>Never miss a dose</h3>
+            <p>Reminders follow the schedule you set: daily, twice daily, weekly or monthly. They work offline, too.</p>
+            <div class="phone phone--peek" style="--h:420px"><img src="/assets/img/screen-meds.webp" alt="Medications screen with today's doses and a care tip" width="640" height="1320" loading="lazy"></div>
+          </article>
+
+          <article class="card card--report reveal">
+            <span class="tag">Vet report</span>
+            <h3>Walk into the vet prepared</h3>
+            <p>One clean PDF with medications, vaccinations, weight trend and behaviour notes. Share it in seconds.</p>
+            <div class="paper" aria-hidden="true">
+              <div class="paper__head"><img src="/assets/img/logo.webp" alt="" width="28" height="28"><span><strong>Max · Vet report</strong><small>Last 30 days</small></span><em>PDF</em></div>
+              <div class="paper__row"><span></span><span class="w60"></span></div>
+              <div class="paper__row"><span></span><span class="w40"></span></div>
+              <svg viewBox="0 0 200 50" class="paper__chart"><path d="M0 34c20-6 30-14 50-10s30 14 50 6 40-22 60-14 30 8 40 4" /></svg>
+              <div class="paper__row"><span></span><span class="w70"></span></div>
+            </div>
+          </article>
+
+          <article class="card card--money reveal">
+            <span class="tag">Expenses</span>
+            <h3>Know where the treats go</h3>
+            <p>Add receipts and see your monthly total at a glance.</p>
+            <div class="bars" aria-hidden="true"><i style="--v:42%"></i><i style="--v:68%"></i><i style="--v:35%"></i><i style="--v:82%"></i><i style="--v:55%"></i><i style="--v:94%"></i><i style="--v:48%"></i></div>
+          </article>
+
+          <article class="card card--widget reveal">
+            <span class="tag">Home-screen widget</span>
+            <h3>Care at a glance, without opening the app</h3>
+            <div class="widget" aria-hidden="true">
+              <div class="widget__tile widget__tile--a"><img src="/assets/img/max-hero.webp" alt="" width="735" height="345" loading="lazy"><span><strong>Max</strong>87%</span></div>
+              <div class="widget__tile widget__tile--b"><svg class="ic" aria-hidden="true"><use href="#i-pill"/></svg><strong>8:00 PM</strong><small>Omega-3</small></div>
+            </div>
+          </article>
+
+          <article class="card card--wide card--peach reveal">
+            <div class="card__text">
+              <span class="tag">Reminders that feel kind</span>
+              <h3>The right nudge at the right time.</h3>
+              <p>Vaccinations, medication, vet visits and a gentle evening "How was Max's day?". You choose exactly which ones to keep.</p>
+            </div>
+            <div class="toasts" aria-hidden="true">
+              <div class="toast"><span class="toast__ico toast__ico--coral"><svg class="ic"><use href="#i-cal"/></svg></span><span><strong>Rabies vaccination</strong><small>Due in 12 days</small></span><em>now</em></div>
+              <div class="toast toast--2"><span class="toast__ico toast__ico--lav"><svg class="ic"><use href="#i-pill"/></svg></span><span><strong>Time for Omega-3</strong><small>1 capsule · with food</small></span><em>8:00 PM</em></div>
+              <div class="toast toast--3"><span class="toast__ico toast__ico--mint"><svg class="ic"><use href="#i-heart"/></svg></span><span><strong>How was Max's day?</strong><small>A quick check-in</small></span><em>7:00 PM</em></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats" aria-label="WAGORA in numbers">
+      <div class="wrap">
+        <ul class="stats__grid">
+          <li class="reveal"><strong><span data-count="2">2</span></strong><span>dogs free, forever</span></li>
+          <li class="reveal"><strong><span data-count="0">0</span></strong><span>ads, and your data is never sold</span></li>
+          <li class="reveal"><strong><span data-count="3">3</span></strong><span>languages: English, Español, Deutsch</span></li>
+          <li class="reveal"><strong><span data-count="7">7</span> days</strong><span>free trial on the yearly Plus plan</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= AI ================= -->
+    <section class="section ai" id="ai">
+      <div class="ai__glow" aria-hidden="true"></div>
+      <div class="wrap split">
+        <div class="split__copy reveal">
+          <p class="kicker kicker--lav">Ask WAGORA</p>
+          <h2>An assistant that <span class="accent accent--lav">knows your dog.</span></h2>
+          <p class="lead">Ask anything, from "why is Max scratching?" to "help me prepare for the vet". Answers consider your dog's breed, age, allergies and recent days.</p>
+          <ul class="checks checks--lav">
+            <li><strong>Food scanner.</strong> Photograph a label and check ingredients against your dog's allergies.</li>
+            <li><strong>Document reading.</strong> Scan a vet paper and WAGORA explains it in plain words.</li>
+            <li><strong>Weekly recap.</strong> A warm summary of your week together.</li>
+            <li><strong>Your choice.</strong> Turn off personalised AI any time in Privacy settings.</li>
+          </ul>
+          <p class="fineprint">General guidance, not veterinary advice. For anything worrying, always talk to your vet.</p>
+        </div>
+
+        <div class="split__visual reveal">
+          <img class="mascot float" src="/assets/img/ai-mascot.webp" alt="" width="640" height="618" loading="lazy">
+          <div class="chat" id="chat" aria-label="Example conversation with Ask WAGORA">
+            <div class="chat__head">
+              <span class="chat__avatar"><svg class="ic" aria-hidden="true"><use href="#i-paw"/></svg></span>
+              <span><strong>Ask WAGORA</strong><small><i class="live"></i> Personalised for Max</small></span>
+            </div>
+            <div class="chat__body">
+              <div class="msg msg--user" data-step="0">Why has Max been scratching more this week?</div>
+              <div class="typing" data-step="1" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="msg msg--ai" data-step="2">
+                <p>Here's what I found based on Max's recent behaviour and records.</p>
+                <div class="msg__block"><h4>What you've noticed</h4><ul><li>More frequent scratching</li><li>Mostly around ears and paws</li><li>Slight redness in photos</li></ul></div>
+                <div class="msg__block"><h4>What to monitor</h4><ul><li>Redness, swelling or discharge</li><li>Changes in appetite or energy</li></ul></div>
+                <div class="msg__block msg__block--vet"><h4>When to contact a vet</h4><ul><li>If it worsens or lasts more than 3 days</li><li>If you see open sores or swelling</li></ul></div>
+                <p class="msg__note">General information, not a veterinary diagnosis.</p>
+              </div>
+            </div>
+            <div class="chips-q" aria-hidden="true"><span>Can Max eat this?</span><span>Help me prepare for the vet</span><span>Create a training plan</span></div>
+          </div>
+
+          <div class="scan reveal" aria-label="Example of the food scanner">
+            <div class="scan__label">
+              <div class="scan__line"></div>
+              <strong>Premium Dog Food</strong>
+              <small>Ingredients: <mark>chicken</mark> meal, rice, <mark>beef</mark> fat, pea protein, dried beet pulp…</small>
+            </div>
+            <div class="scan__result"><svg class="ic" aria-hidden="true"><use href="#i-scan"/></svg><span><strong>2 matches with Max's allergies</strong><small>Chicken and beef. Maybe pick another recipe.</small></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SAFETY ================= -->
+    <section class="section safety" id="safety">
+      <div class="safety__bg" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="section__head section__head--light reveal">
+          <p class="kicker kicker--coral">Safety, always free</p>
+          <h2>When it matters, WAGORA is <span class="accent accent--coral">already ready.</span></h2>
+          <p>Lost-dog alerts, the emergency card, QR ID and hazard reports are free for everyone. We will never charge for keeping a dog safe.</p>
+        </div>
+
+        <div class="safety__grid">
+          <div class="radar reveal" aria-hidden="true">
+            <div class="radar__ring radar__ring--1"></div>
+            <div class="radar__ring radar__ring--2"></div>
+            <div class="radar__ring radar__ring--3"></div>
+            <span class="radar__pulse"></span><span class="radar__pulse radar__pulse--2"></span>
+            <span class="radar__me"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <span class="radar__dot radar__dot--1"><svg class="ic"><use href="#i-paw"/></svg></span>
+            <span class="radar__dot radar__dot--2"><svg class="ic"><use href="#i-paw"/></svg></span>
+            <span class="radar__dot radar__dot--3"><svg class="ic"><use href="#i-paw"/></svg></span>
+            <span class="radar__dot radar__dot--4"><svg class="ic"><use href="#i-paw"/></svg></span>
+            <span class="radar__dot radar__dot--5"><svg class="ic"><use href="#i-paw"/></svg></span>
+            <div class="radar__toast"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg><span><strong>Lost-dog alert sent</strong><small>Neighbours nearby notified</small></span></div>
+          </div>
+
+          <ul class="safety__list">
+            <li class="reveal"><span class="sico sico--coral"><svg class="ic" aria-hidden="true"><use href="#i-siren"/></svg></span><div><h3>Lost-dog alert</h3><p>One tap raises an alert that reaches people nearby within a minute, with a poster you can share.</p></div></li>
+            <li class="reveal"><span class="sico sico--blue"><svg class="ic" aria-hidden="true"><use href="#i-qr"/></svg></span><div><h3>QR ID tag</h3><p>Anyone who finds your dog can reach you, <em>without</em> seeing your phone number or address.</p></div></li>
+            <li class="reveal"><span class="sico sico--peach"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span><div><h3>Emergency card</h3><p>Allergies, medication, microchip and your vet's number, one tap away, even offline.</p></div></li>
+            <li class="reveal"><span class="sico sico--mint"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span><div><h3>Safety map &amp; hazards</h3><p>See lost and found dogs, vets and parks, and report broken glass or unsafe areas. Locations are only ever approximate.</p></div></li>
+          </ul>
+        </div>
+
+        <div class="fan reveal" aria-label="Safety screens">
+          <div class="phone fan__phone fan__phone--l" style="--h:520px"><img src="/assets/img/screen-emergency.webp" alt="Emergency information screen with allergies, medication, microchip and call buttons" width="517" height="1372" loading="lazy"></div>
+          <div class="phone fan__phone fan__phone--c" style="--h:580px"><img src="/assets/img/screen-missing.webp" alt="Missing dog alert with last seen location and nearby alert status" width="525" height="1372" loading="lazy"></div>
+          <div class="phone fan__phone fan__phone--r" style="--h:520px"><img src="/assets/img/screen-qr.webp" alt="QR ID profile that helps a found dog get home" width="513" height="1372" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMMUNITY ================= -->
+    <section class="section community" id="community">
+      <div class="wrap split split--rev">
+        <div class="split__visual split__visual--fan reveal">
+          <div class="phone fan2 fan2--a" style="--h:500px"><img src="/assets/img/screen-map.webp" alt="Safety map with lost, found, hazard and vet filters" width="435" height="1281" loading="lazy"></div>
+          <div class="phone fan2 fan2--b" style="--h:560px"><img src="/assets/img/screen-post.webp" alt="A community post about a happy day at the dog park with comments" width="415" height="1281" loading="lazy"></div>
+          <div class="phone fan2 fan2--c" style="--h:500px"><img src="/assets/img/screen-create.webp" alt="Create a post with post types and audience" width="406" height="1281" loading="lazy"></div>
+        </div>
+        <div class="split__copy reveal">
+          <p class="kicker">Community</p>
+          <h2>Real people. <span class="accent">Happy dogs.</span> Better days.</h2>
+          <p class="lead">Share moments, ask questions, join groups for your breed or life stage, and discover dog-friendly places and trusted services nearby.</p>
+          <ul class="pills">
+            <li>Moments</li><li>Questions</li><li>Advice</li><li>Groups</li><li>Nearby</li><li>Lost &amp; found</li><li>Safety alerts</li>
+          </ul>
+          <ul class="checks">
+            <li>Reporting tools, automatic hiding after reports and human moderation keep it kind</li>
+            <li>Block anyone, delete your own posts and comments any time</li>
+            <li>Choose your audience for every post: public, nearby or a group</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHARING ================= -->
+    <section class="section sharing" id="sharing">
+      <div class="wrap split">
+        <div class="split__copy reveal">
+          <p class="kicker">Share care with people you trust</p>
+          <h2>A sitter, a partner, a walker. <span class="accent">You decide what they see.</span></h2>
+          <p class="lead">Invite someone and choose exactly which parts they can see, and for how long. Remove access whenever you like.</p>
+          <ul class="checks">
+            <li>Feeding, medication, documents, emergency details: switch each on or off</li>
+            <li>Set an end date so access expires on its own</li>
+            <li>They only ever see what you allow</li>
+          </ul>
+        </div>
+
+        <div class="share reveal" id="share" aria-label="Interactive sharing example">
+          <div class="share__who">
+            <span class="share__avatar">S</span>
+            <span><strong>Sam</strong><small>Dog sitter · invited by you</small></span>
+            <em class="share__badge">Viewer</em>
+          </div>
+          <ul class="share__toggles">
+            <li><span><svg class="ic" aria-hidden="true"><use href="#i-bowl"/></svg>Feeding</span><label class="switch"><input type="checkbox" data-share="Feeding" checked><i></i><span class="sr">Feeding</span></label></li>
+            <li><span><svg class="ic" aria-hidden="true"><use href="#i-pill"/></svg>Medication</span><label class="switch"><input type="checkbox" data-share="Medication" checked><i></i><span class="sr">Medication</span></label></li>
+            <li><span><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg>Emergency details</span><label class="switch"><input type="checkbox" data-share="Emergency details"><i></i><span class="sr">Emergency details</span></label></li>
+            <li><span><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg>Documents</span><label class="switch"><input type="checkbox" data-share="Documents"><i></i><span class="sr">Documents</span></label></li>
+          </ul>
+          <div class="share__dur" role="radiogroup" aria-label="How long">
+            <button type="button" role="radio" aria-checked="false" data-dur="1 day">1 day</button>
+            <button type="button" role="radio" aria-checked="true" data-dur="1 week">1 week</button>
+            <button type="button" role="radio" aria-checked="false" data-dur="until you remove them">Until I remove</button>
+          </div>
+          <p class="share__sum" id="shareSum" aria-live="polite"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section class="section gallery-sec" id="gallery">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Take a look inside</p>
+          <h2>Soft on the eyes. <span class="accent">Serious about your dog.</span></h2>
+          <p>Light and dark mode, large text and reduced motion all supported.</p>
+        </div>
+      </div>
+      <div class="gallery reveal" id="gallery-track" tabindex="0" aria-label="App screens, scroll sideways">
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-home.webp" alt="Home" width="640" height="1448" loading="lazy"><figcaption>Home</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-health.webp" alt="Health" width="640" height="1318" loading="lazy"><figcaption>Health</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-wellness.webp" alt="Wellness" width="640" height="1320" loading="lazy"><figcaption>Wellness</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-meds.webp" alt="Medications" width="640" height="1320" loading="lazy"><figcaption>Medications</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-docs.webp" alt="Documents" width="640" height="1320" loading="lazy"><figcaption>Documents</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-patterns.webp" alt="Patterns" width="510" height="1410" loading="lazy"><figcaption>Patterns</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-training.webp" alt="Training" width="510" height="1410" loading="lazy"><figcaption>Training</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-calm.webp" alt="Calm at home plan" width="510" height="1410" loading="lazy"><figcaption>Calm-at-home plan</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-protect.webp" alt="Safety tools" width="516" height="1410" loading="lazy"><figcaption>Safety tools</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-loststart.webp" alt="Lost dog alert" width="522" height="1372" loading="lazy"><figcaption>Lost-dog alert</figcaption></figure>
+        <figure class="phone" style="--h:520px"><img src="/assets/img/screen-report.webp" alt="Report safety issue" width="390" height="1281" loading="lazy"><figcaption>Report a hazard</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ================= PLUS ================= -->
+    <section class="section plus" id="plus">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Simple pricing</p>
+          <h2>Free for everyday life. <span class="accent">Plus for the deep end.</span></h2>
+          <p>WAGORA is free to download and the basics stay free. Safety features are never behind a paywall.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan reveal">
+            <h3>Free</h3>
+            <p class="plan__price"><strong>$0</strong><span>forever</span></p>
+            <p class="plan__sub">Everything you need for a happy, healthy daily routine.</p>
+            <ul class="checks checks--sm">
+              <li>Up to 2 dogs</li>
+              <li>Daily journal, reminders and health records</li>
+              <li>AI chat, food scanner and document scans with daily limits</li>
+              <li>Lost-dog alerts, emergency card and QR ID</li>
+              <li>Community, groups and nearby places</li>
+              <li>Share with 1 family member or sitter</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#download">Download free</a>
+          </article>
+
+          <article class="plan plan--plus reveal">
+            <span class="plan__flag"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg> Most loved</span>
+            <h3>WAGORA Plus</h3>
+            <div class="seg" role="radiogroup" aria-label="Billing period" id="seg">
+              <button type="button" role="radio" aria-checked="false" data-plan="weekly">Weekly</button>
+              <button type="button" role="radio" aria-checked="false" data-plan="monthly">Monthly</button>
+              <button type="button" role="radio" aria-checked="true" data-plan="yearly">Yearly</button>
+            </div>
+            <p class="plan__price"><strong id="planPrice">$34.99</strong><span id="planPer">per year</span></p>
+            <p class="plan__sub" id="planNote"><b>≈ $2.92 a month</b> · 7-day free trial for new subscribers</p>
+            <ul class="checks checks--sm checks--white">
+              <li><strong>Unlimited dogs</strong></li>
+              <li>Advanced AI that knows your dog's full history</li>
+              <li>Deeper insights: 30, 90 and 365-day trends and a weekly recap</li>
+              <li>Smart document scanning and unlimited storage</li>
+              <li>Vet reports for any period, no watermark</li>
+              <li>Sharing with unlimited people and per-section permissions</li>
+              <li>Expense charts and CSV export, priority support</li>
+            </ul>
+            <a class="btn btn--light btn--block" href="#download">Try Plus</a>
+          </article>
+        </div>
+        <p class="fineprint fineprint--center reveal">Prices in USD and may vary by country. Plus renews automatically and is managed in your Google Play account, where you can cancel any time.</p>
+      </div>
+    </section>
+
+    <!-- ================= PRIVACY + LANGUAGES ================= -->
+    <section class="section privacy" id="privacy">
+      <div class="wrap">
+        <div class="privacy__box">
+          <div class="privacy__head reveal">
+            <span class="privacy__badge"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <div>
+              <p class="kicker">Privacy first</p>
+              <h2>Your dog's records are <span class="accent">yours.</span></h2>
+              <p>Private to you and the people you invite. We built WAGORA so you never have to trade your data for a good app.</p>
+            </div>
+          </div>
+          <div class="pgrid">
+            <div class="pitem reveal"><span class="pitem__icon"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Never sold</h3><p>We never sell your data, and there are no ads.</p></div>
+            <div class="pitem reveal"><span class="pitem__icon"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span><h3>Approximate location</h3><p>About 1 km for anything public, and only when you use a feature that needs it.</p></div>
+            <div class="pitem reveal"><span class="pitem__icon"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Encrypted</h3><p>Encrypted in transit and at rest, with strict access rules.</p></div>
+            <div class="pitem reveal"><span class="pitem__icon"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span><h3>AI on your terms</h3><p>Switch personalised AI off in Privacy settings any time.</p></div>
+            <div class="pitem reveal"><span class="pitem__icon"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg></span><h3>Download your data</h3><p>Profile → Privacy → Download my data. We email you a link.</p></div>
+            <div class="pitem reveal"><span class="pitem__icon"><svg class="ic" aria-hidden="true"><use href="#i-trash"/></svg></span><h3>Delete anytime</h3><p>Remove your account in the app, or <a href="/delete-account">see how deletion works</a>.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section voices" id="languages">
+      <div class="wrap voices__grid">
+        <div class="voices__langs reveal">
+          <p class="kicker">Speaks your language</p>
+          <h2>Wherever you walk, <span class="accent">it feels like home.</span></h2>
+          <p class="lead">WAGORA is available in English, Español and Deutsch, with more on the way.</p>
+          <ul class="hello">
+            <li lang="en"><span>English</span>A smarter life for your best friend.</li>
+            <li lang="es"><span>Español</span>Una vida más inteligente para tu mejor amigo.</li>
+            <li lang="de"><span>Deutsch</span>Ein klügeres Leben für deinen besten Freund.</li>
+          </ul>
+        </div>
+        <figure class="promise reveal">
+          <svg class="promise__mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 34c0-9 4-15 12-19l2 3c-5 3-7 6-7 9h6v11H10v-4Zm18 0c0-9 4-15 12-19l2 3c-5 3-7 6-7 9h6v11H28v-4Z"/></svg>
+          <blockquote><p>Dogs give us their whole hearts. The least we can do is make caring for them calmer, safer and a little more joyful, and never treat your dog's story as a product.</p></blockquote>
+          <figcaption><img src="/assets/img/logo.webp" alt="" width="44" height="44" loading="lazy"><span><strong>Our promise</strong>The WAGORA team</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= SUPPORT TEASER ================= -->
+    <section class="section helpband" id="help">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Support</p>
+          <h2>We're here to <span class="accent">help.</span></h2>
+          <p>Quick answers, step-by-step guides and a real person when you need one.</p>
+        </div>
+        <div class="helpcards">
+          <a class="hcard reveal" href="/support#getting-started"><span class="hcard__ico hcard__ico--blue"><svg class="ic" aria-hidden="true"><use href="#i-paw"/></svg></span><h3>Getting started</h3><p>Add your dog, sign in and set up reminders.</p><span class="hcard__go">Read guides <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="hcard reveal" href="/support#plus"><span class="hcard__ico hcard__ico--lav"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span><h3>Plus &amp; billing</h3><p>Trials, cancelling, restoring a purchase.</p><span class="hcard__go">Read guides <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="hcard reveal" href="/support#safety"><span class="hcard__ico hcard__ico--coral"><svg class="ic" aria-hidden="true"><use href="#i-siren"/></svg></span><h3>Lost dog &amp; safety</h3><p>Alerts, QR tags and emergency details.</p><span class="hcard__go">Read guides <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="hcard reveal" href="/support#privacy"><span class="hcard__ico hcard__ico--mint"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg></span><h3>Privacy &amp; data</h3><p>Download or delete your data.</p><span class="hcard__go">Read guides <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section faq" id="faq">
+      <div class="wrap faq__wrap">
+        <div class="section__head section__head--left reveal">
+          <p class="kicker">Questions</p>
+          <h2>Good to <span class="accent">know.</span></h2>
+          <p>Something else on your mind? Visit the <a href="/support">Support Centre</a> or write to <a href="mailto:support@wagora.app">support@wagora.app</a>. A real person reads every message.</p>
+        </div>
+        <div class="faq__list reveal">
+          <details open><summary>Is WAGORA free?</summary><p>Yes. WAGORA is free to download, and daily care, reminders, health records, safety tools and the community are free. WAGORA Plus adds advanced AI, deeper insights, unlimited dogs and more.</p></details>
+          <details><summary>Do I need an account?</summary><p>You can sign in with email, Google or Apple, or look around as a guest first. An account keeps your dog's records safe and synced across devices.</p></details>
+          <details><summary>Is the AI a vet?</summary><p>No. Ask WAGORA gives general guidance based on your dog's profile and recent days. It is never a diagnosis. For anything worrying, please contact your vet or an emergency clinic.</p></details>
+          <details><summary>How does the lost-dog alert work?</summary><p>Tap "Is your dog missing?", confirm the last-seen place and details, and WAGORA alerts people nearby. You also get a shareable poster. Locations are approximate, never exact.</p></details>
+          <details><summary>What does the QR tag reveal about me?</summary><p>Nothing private. Someone who scans it can contact you through a relay without seeing your phone number or home address.</p></details>
+          <details><summary>Can my sitter or partner use it too?</summary><p>Yes. Invite them and choose exactly what they can see, and until when. You can remove them at any time.</p></details>
+          <details><summary>Is it on iPhone?</summary><p>WAGORA is launching on Android first, with iPhone on the way.</p></details>
+          <details><summary>How do I cancel Plus or delete my data?</summary><p>Cancel in Google Play → Payments &amp; subscriptions. To delete your account, go to Profile → Privacy → Delete account, or read <a href="/delete-account">how deletion works</a>.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="section final" id="download">
+      <div class="wrap">
+        <div class="final__box reveal">
+          <div class="final__art" aria-hidden="true">
+            <img src="/assets/img/max-hero.webp" alt="" width="735" height="345" loading="lazy">
+            <span class="ripple"></span><span class="ripple"></span><span class="ripple"></span>
+          </div>
+          <h2>Give your best friend <span class="accent accent--light">a smarter life.</span></h2>
+          <p>Download WAGORA and set up your dog in under two minutes. Free to start, ad-free, and never sold.</p>
+          <div class="final__btns">
+            <a class="store-btn store-btn--light" href="https://play.google.com/store/apps/details?id=com.wagora.app" rel="noopener">
+              <svg class="ic ic--brand" aria-hidden="true"><use href="#i-play"/></svg>
+              <span><small>Get it on</small>Google Play</span>
+            </a>
+            <span class="soon"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> iPhone coming soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__card">
+        <div class="footer__glow" aria-hidden="true"></div>
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="/"><img src="/assets/img/logo.webp" alt="" width="40" height="40" loading="lazy"><span>WAGORA</span></a>
+            <p>A smarter life for your best friend. Daily care, health, safety and community in one calm app.</p>
+            <a class="store-btn store-btn--sm" href="https://play.google.com/store/apps/details?id=com.wagora.app" rel="noopener">
+              <svg class="ic ic--brand" aria-hidden="true"><use href="#i-play"/></svg>
+              <span><small>Get it on</small>Google Play</span>
+            </a>
+          </div>
+          <nav class="footer__col" aria-label="Product">
+            <h3>Product</h3>
+            <a href="/#features">Features</a>
+            <a href="/#ai">Ask WAGORA</a>
+            <a href="/#safety">Safety</a>
+            <a href="/#community">Community</a>
+            <a href="/#plus">WAGORA Plus</a>
+          </nav>
+          <nav class="footer__col" aria-label="Support and legal">
+            <h3>Support</h3>
+            <a href="/support">Support Centre</a>
+            <a href="/support#contact">Contact us</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Use</a>
+            <a href="/delete-account">Delete your account</a>
+          </nav>
+          <div class="footer__col">
+            <h3>Say hello</h3>
+            <a href="mailto:support@wagora.app">support@wagora.app</a>
+            <a href="mailto:privacy@wagora.app">privacy@wagora.app</a>
+            <ul class="footer__langs" aria-label="Languages"><li>EN</li><li>ES</li><li>DE</li></ul>
+          </div>
+        </div>
+        <p class="footer__word" aria-hidden="true">WAGORA</p>
+        <div class="footer__bottom">
+          <p>© <span id="year">2026</span> WAGORA · Made with love for dogs and the people who love them.</p>
+          <button class="to-top" id="toTop" type="button">Back to top <span aria-hidden="true">↑</span></button>
+        </div>
+      </div>
+      <p class="footer__legal">WAGORA provides general information and AI-generated guidance. It is not veterinary advice and does not replace a veterinarian. If your dog may be unwell or in danger, contact a vet or an emergency clinic straight away. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js?v=1" defer></script>
+</body>
+</html>

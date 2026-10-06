@@ -1,15 +1,9 @@
 {
-  "name": "wagorawebsite",
+  "name": "wagora-website",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "Marketing and support website for WAGORA (static site, deploys to Vercel as-is)",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "expess": "^0.0.1-security"
+    "dev": "npx --yes serve . -l 5173"
   }
 }
