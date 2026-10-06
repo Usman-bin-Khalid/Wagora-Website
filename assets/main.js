@@ -309,8 +309,8 @@
      handed to the visitor's email app, addressed to support. If a
      SUPPORT_ENDPOINT is set it is POSTed as JSON instead.
      ========================================================== */
-  const SUPPORT_EMAIL = 'support@wagora.app';
-  const PRIVACY_EMAIL = 'privacy@wagora.app';
+  const SUPPORT_EMAIL = 'wagora.support@gmail.com';
+  const PRIVACY_EMAIL = 'wagora.support@gmail.com';
   const SUPPORT_ENDPOINT = '';
   const form = $('contactForm');
   if (form) {

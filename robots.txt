@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wagora.vercel.app/sitemap.xml
+Sitemap: https://wagorawebsite.vercel.app/sitemap.xml
