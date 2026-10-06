@@ -305,13 +305,13 @@
 
   /* ==========================================================
      Contact form
-     The site has no server of its own, so by default the message is
+     Messages are POSTed to the WAGORA API (they land in the admin Inbox). Without an endpoint the message is
      handed to the visitor's email app, addressed to support. If a
      SUPPORT_ENDPOINT is set it is POSTed as JSON instead.
      ========================================================== */
   const SUPPORT_EMAIL = 'wagora.support@gmail.com';
   const PRIVACY_EMAIL = 'wagora.support@gmail.com';
-  const SUPPORT_ENDPOINT = '';
+  const SUPPORT_ENDPOINT = 'https://wagora-api-dev.onrender.com/web/support/messages';
   const form = $('contactForm');
   if (form) {
     const openedAt = Date.now();
@@ -371,7 +371,7 @@
             body: JSON.stringify({ source: 'website', kind: field('cf-kind').value, name: field('cf-name').value.trim(), email: field('cf-email').value.trim(), subject: field('cf-subject').value.trim() || null, message: message.value.trim(), consent: true, hp: field('cf-website').value, elapsedMs: Date.now() - openedAt }),
           });
           const json = await res.json().catch(() => null);
-          if (res.ok && json?.success) { $('cf-ref').textContent = json.data.ref; $('cf-done-text').textContent = "We've received your message and will reply within 2 business days."; form.hidden = true; done.hidden = false; done.focus(); return; }
+          if (res.ok && json?.data?.ref) { $('cf-ref').textContent = json.data.ref; $('cf-ref').parentElement.hidden = false; $('cf-done-text').textContent = "We've received your message and will reply within 2 business days."; form.hidden = true; done.hidden = false; done.focus(); return; }
           status.textContent = res.status === 429 ? 'You have sent a few messages already. Please try again in an hour.' : json?.error?.message || 'Something went wrong. Please try again.';
         } catch { status.innerHTML = `We could not reach WAGORA right now. Please email <a href="mailto:${SUPPORT_EMAIL}">${SUPPORT_EMAIL}</a>.`; }
         status.hidden = false;
