@@ -250,16 +250,6 @@
     }));
   }
 
-  /* ---------- Gallery: drag to scroll ---------- */
-  const track = $('gallery-track');
-  if (track) {
-    let down = false, sx = 0, sl = 0, moved = false;
-    track.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = track.scrollLeft; track.style.cursor = 'grabbing'; track.style.scrollSnapType = 'none'; });
-    window.addEventListener('pointermove', (e) => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 3) moved = true; track.scrollLeft = sl - dx; });
-    window.addEventListener('pointerup', () => { if (!down) return; down = false; track.style.cursor = ''; track.style.scrollSnapType = ''; });
-    track.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') track.scrollBy({ left: 260, behavior: 'smooth' }); if (e.key === 'ArrowLeft') track.scrollBy({ left: -260, behavior: 'smooth' }); });
-  }
-
   /* ==========================================================
      Support centre: search + categories
      ========================================================== */
